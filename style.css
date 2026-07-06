@@ -98,7 +98,7 @@ body {
 }
 
 /* Hamburger */
-/* .hamburger {
+.hamburger {
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -110,7 +110,8 @@ body {
     height: 3px;
     background: #222;
     border-radius: 5px;
-} */
+
+}
 
 /* Exact Home Page Size */
 
@@ -474,10 +475,8 @@ body {
 
 
 
-
-
 /* Work Section */
-.work {
+/* .work {
     width: 100%;
     margin: 0 auto;
     background: #eefbec;
@@ -548,6 +547,145 @@ body {
     height: 100%;
     background: rgba(255, 255, 255, 0.9);
     z-index: 3;
+} */
+
+/* Our Work Section */
+.work {
+    background: #edf5e8;
+    padding: 80px 8%;
+}
+
+.work-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.work-title span {
+    color: #86c440;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.work-title h2 {
+    font-size: 48px;
+    color: #0d3b2e;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Card */
+.work-card {
+    position: relative;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 8px 20x rgba(0, 0, 0, 0.12);
+    background: #ddd;
+}
+
+/* both images */
+.work-card img {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: width 0.7s ease, opacity 0.7s ease, filter 0.7s ease;
+
+}
+
+/* before image full */
+.work-card img:first-child {
+    left: 0;
+    filter: grayscale(35%);
+    opacity: 0.65;
+}
+
+/* after image starts at 50% width */
+.work-card img:last-child {
+    right: 0;
+    /* width: 50%;
+    object-position: right;
+    transition: width 0.7s ease;
+    border-left: 2px solid rgba(255, 255, 255, 0.8); */
+}
+
+/* hover effect */
+.work-card:hover img:last-child {
+    width: 100%;
+}
+
+/* Before image slowly disapper */
+.work-card:hover img:first-child {
+    width: 0%;
+    opacity: 0;
+    filter: grayscale(100%);
+}
+
+/* optional slight dark overlay effect on before */
+/* .work-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+} */
+
+.work-card:hover::after {
+    opacity: 0;
+}
+
+.work-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 3;
+}
+
+.work-card:hover::before {
+    opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .work-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .work-title h2 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 600px) {
+    .work-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .work-card {
+        height: 240px;
+    }
+
+    .work-title h2 {
+        font-size: 30px;
+    }
 }
 
 /* Contact */
@@ -617,6 +755,10 @@ footer h2 {
     letter-spacing: 2px;
 }
 
+
+
+
+
 /* Mobile Responsive */
 @media (max-width: 1100px) {
 
@@ -632,11 +774,6 @@ footer h2 {
     .hero {
         height: auto;
         min-height: auto;
-    }
-
-    .main-header {
-        position: fixed;
-        top: 0;
     }
 
     .navbar {
@@ -666,7 +803,7 @@ footer h2 {
     }
 
     .hamburger {
-        display: flex;
+        display: grid;
     }
 
     .nav-links {
