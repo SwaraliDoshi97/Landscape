@@ -15,7 +15,7 @@ body {
     background: #222;
     color: #fff;
     font-family: "Poppins", sans-serif;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 /* Header fixed inside 1067px design */
@@ -26,6 +26,7 @@ body {
     width: 100%;
     padding: 1.25rem 8%;
     position: fixed;
+
     top: 0;
     left: 0;
     z-index: 9999;
@@ -42,7 +43,7 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgb(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(12px);
 
@@ -119,8 +120,8 @@ body {
 
 .hero {
     width: 100%;
-    min-height: 85vh;
-    height: 120vh;
+    min-height: 850px;
+    height: 100vh;
     position: relative;
     overflow: hidden;
     background: #275d4c;
@@ -676,7 +677,7 @@ body {
 
 /* Mobile responsive styles */
 
-@media (max-width: 600px) {
+@media (max-width: 786px) {
 
     .work-gallery {
         grid-template-columns: 1fr;
@@ -763,7 +764,7 @@ footer h2 {
 
 
 /* Mobile Responsive */
-@media (max-width: 1100px) {
+@media (max-width: 786px) {
 
     .main-header,
     .hero,
@@ -774,17 +775,20 @@ footer h2 {
         width: 100%;
     }
 
-    .hero {
-        height: auto;
-        min-height: auto;
-    }
 
+    /* =========================
+       Navbar
+    ========================= */
     .navbar {
         width: 100%;
         height: 70px;
         border-radius: 0;
         grid-template-columns: 1fr auto;
         padding: 0 20px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .logo-box {
@@ -801,13 +805,17 @@ footer h2 {
         font-size: 15px;
     }
 
-    .phone-box {
+    .nav-box {
         display: none;
     }
 
     .hamburger {
-        display: grid;
+        display: flex;
     }
+
+    /* =========================
+       Mobile Navigation
+    ========================= */
 
     .nav-links {
         position: fixed;
@@ -816,7 +824,7 @@ footer h2 {
         width: 100%;
         background: #f4f4f4;
         padding: 25px 0;
-        transition: 0.4s;
+        transition: 0.4s ease;
     }
 
     .nav-links.active {
@@ -839,10 +847,16 @@ footer h2 {
         border-radius: 25px;
     }
 
+    /* =========================
+       Hero Section
+    ========================= */
     .hero {
+        height: auto;
+        min-height: auto;
         padding-top: 70px;
     }
 
+    /* Reset desktop absolute positioning */
     .hero-left,
     .hero-right,
     .hero-title-box,
@@ -850,71 +864,121 @@ footer h2 {
     .watermark {
         position: relative;
         width: 100%;
+
         left: auto;
         right: auto;
         top: auto;
         bottom: auto;
+
         transform: none;
     }
 
+    /* Hero Image */
     .hero-left {
         height: 380px;
+        background-position: center;
+        background-size: cover;
     }
 
+    /* Hide green desktop side */
     .hero-right {
         display: none;
     }
 
+    /* =========================
+       Hero Heading
+    ========================= */
+
+
     .hero-title-box {
+        width: 100%;
         height: auto;
         background: #111;
         border: none;
-        padding: 25px 20px;
+
+        padding: 22px 20px;
     }
 
     .hero-title-box h1 {
-        font-size: 34px;
+        font-size: 27px;
         white-space: normal;
-        line-height: 1.2;
+        line-height: 1.3;
+
+        white-space: normal;
+
+        /* Reset desktop gradient */
+        background: none;
+        color: #fff;
+        -webkit-text-fill-color: #fff;
     }
 
     .hero-title-box h1 span {
         display: block;
+
+        color: #63f05a;
+        -webkit-text-fill-color: #63f05a;
     }
 
+
+    /* =========================
+       Hero Content
+    ========================= */
+
     .hero-content {
-        background: #173f31;
+        width: 100%;
+        height: auto;
+
+        background: #275d4c;
         padding: 35px 22px;
+
+        text-align: left;
     }
 
     .hero-content h3 {
-        font-size: 22px;
+        font-size: 20px;
+        line-height: 1.5;
         margin-bottom: 25px;
     }
 
     .hero-content p {
-        font-size: 17px;
+        font-size: 16px;
+        line-height: 1.6;
     }
+
+    /* White Box */
 
     .white-box {
         width: 130px;
         height: 160px;
-        margin: 30px auto;
+        margin: 15px auto;
     }
 
+    /* Hero Button */
+
     .hero-btn {
-        margin: 0;
         display: block;
+
+        width: max-content;
+        margin: 0 auto;
+
         text-align: center;
         font-size: 14px;
     }
 
+    /* Watermark */
+
     .watermark {
-        background: #173f31;
+        width: 100%;
+
+
+        background: #275d4c;
         text-align: center;
+
         font-size: 30px;
-        padding-bottom: 30px;
+
+        padding: 10px 15px 30px;
         letter-spacing: 3px;
+        white-space: normal;
     }
 
     .services-list {
