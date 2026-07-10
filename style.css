@@ -113,23 +113,25 @@ body {
 
 }
 
-/* Exact Home Page Size */
+/* =========================
+    Exact Home Page Size
+========================= */
 
 .hero {
     width: 100%;
-    min-height: 150vh;
-    height: 100vh;
+    min-height: 145vh;
+    height: 75vh;
     position: relative;
     overflow: hidden;
-    background: #143c2e;
+    background: #275d4c;
 }
 
 .hero-left {
     position: absolute;
     left: 0;
     top: 0;
-    width: 51.5%;
-    height: 100%;
+    width: 50%;
+    height: 90%;
     background: url("images/hero.jpg") center/cover no-repeat;
 }
 
@@ -137,20 +139,23 @@ body {
     position: absolute;
     right: 0;
     top: 0;
-    width: 48.5%;
+    width: 50%;
     height: 100%;
     background: #275d4c;
 }
 
 .hero-title-box {
     position: absolute;
-    top: 130px;
+    top: 120px;
     left: 50%;
     transform: translateX(-50%);
+
     width: 70%;
     height: 40px;
-    background: rgba(0, 0, 0, 0.72);
-    border: 1px solid #111;
+
+    /* background: rgba(0, 0, 0, 0.72);
+    border: 1px solid #111; */
+
     z-index: 5;
     display: flex;
     align-items: center;
@@ -158,26 +163,43 @@ body {
 }
 
 .hero-title-box h1 {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 400;
     color: #fff;
     white-space: nowrap;
+
+    width: 100%;
+    text-align: center;
+
+
+    background: linear-gradient(to right,
+            #ffffff 0%,
+            #ffffff 52.15%,
+            #63f05a 52.15%,
+            #63f05a 100%);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
-.hero-title-box h1 span {
+/* .hero-title-box h1 span {
     color: #63f05a;
-}
+} */
 
 .hero-content {
     position: absolute;
     right: 8%;
-    top: 250px;
+    top: 220px;
     width: 40%;
     z-index: 6;
+    height: 61%;
 }
 
 .hero-content h3 {
-    font-size: 25px;
+    font-size: 20px;
     line-height: 1.5;
     color: #a9ee43;
     font-weight: 400;
@@ -185,15 +207,15 @@ body {
 }
 
 .hero-content p {
-    font-size: 21px;
-    line-height: 1.55;
+    font-size: 18px;
+    line-height: 1.5;
     color: #f2f2f2;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .white-box {
     width: 170px;
-    height: 235px;
+    height: 200px;
     background: #eeeeee;
     margin-left: 55%;
     margin-top: 35px;
@@ -214,7 +236,7 @@ body {
 
 .watermark {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     color: rgba(255, 255, 255, 0.55);
@@ -226,8 +248,11 @@ body {
 }
 
 
+/* =========================
+    Services Section 
+========================= */
 
-/* Services Section */
+
 /* 
 .services-page {
     width: 100%;
@@ -336,7 +361,7 @@ body {
     }
 } */
 
-/* Services Page */
+
 .services-page {
     width: 100%;
     padding: 90px 8%;
@@ -472,87 +497,13 @@ body {
 
 
 
+/* =========================
+   OUR WORK SECTION
+========================= */
 
-
-
-/* Work Section */
-/* .work {
-    width: 100%;
-    margin: 0 auto;
-    background: #eefbec;
-    padding: 80px 8% 100px;
-}
-
-.work-title {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.work-title span {
-    display: block;
-    color: #8bd34a;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.work-title h2 {
-    color: #123d2d;
-    font-size: 36px;
-    margin-top: 8px;
-}
-
-.work-gallery {
-    max-width: 820px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.work-card {
-    height: 200px;
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #ddd;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-.work-card img {
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.work-card img:first-child {
-    left: 0;
-    filter: grayscale(35%);
-    opacity: 0.65;
-}
-
-.work-card img:last-child {
-    right: 0;
-}
-
-.work-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    z-index: 3;
-} */
-
-/* Our Work Section */
 .work {
     background: #edf5e8;
-    padding: 80px 8%;
+    padding: 80px 5%;
 }
 
 .work-title {
@@ -577,94 +528,138 @@ body {
 .work-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 10px;
+
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
-/* Card */
+
+/* Work card container */
+
 .work-card {
     position: relative;
-    height: 200px;
-    border-radius: 8px;
+    height: 260px;
+    border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 8px 20x rgba(0, 0, 0, 0.12);
     background: #ddd;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* both images */
+
+/* Common styles for both images */
+
 .work-card img {
     position: absolute;
     top: 0;
-    width: 50%;
+    left: 0;
+
+    width: 100%;
     height: 100%;
+
     object-fit: cover;
 
-    transition: width 0.7s ease, opacity 0.7s ease, filter 0.7s ease;
-
+    transition:
+        clip-path 0.7s ease,
+        filter 0.7s ease,
+        opacity 0.7s ease;
 }
 
-/* before image full */
+
+/* Show the Before image on the left half */
+
 .work-card img:first-child {
-    left: 0;
+    clip-path: inset(0 50% 0 0);
+
     filter: grayscale(35%);
-    opacity: 0.65;
+    opacity: 0.75;
+
+    z-index: 2;
 }
 
-/* after image starts at 50% width */
+
+/* Show the After image on the right half */
+
 .work-card img:last-child {
-    right: 0;
-    /* width: 50%;
-    object-position: right;
-    transition: width 0.7s ease;
-    border-left: 2px solid rgba(255, 255, 255, 0.8); */
+    clip-path: inset(0 0 0 50%);
+
+    z-index: 2;
 }
 
-/* hover effect */
-.work-card:hover img:last-child {
-    width: 100%;
+
+/* Show the full Before image */
+
+.work-card.show-before img:first-child {
+    clip-path: inset(0 0 0 0);
+
+    filter: grayscale(0%);
+    opacity: 1;
+
+    z-index: 5;
 }
 
-/* Before image slowly disapper */
-.work-card:hover img:first-child {
-    width: 0%;
-    opacity: 0;
-    filter: grayscale(100%);
+
+/* Move the After image behind the Before image */
+
+.work-card.show-before img:last-child {
+    z-index: 1;
 }
 
-/* optional slight dark overlay effect on before */
-/* .work-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.12);
-    pointer-events: none;
-    transition: opacity 0.6s ease;
-} */
 
-.work-card:hover::after {
-    opacity: 0;
+/* Show the full After image */
+
+.work-card.show-after img:last-child {
+    clip-path: inset(0 0 0 0);
+
+    z-index: 5;
 }
+
+
+/* Move the Before image behind the After image */
+
+.work-card.show-after img:first-child {
+    z-index: 1;
+}
+
+
+/* Center divider line */
 
 .work-card::before {
     content: "";
+
     position: absolute;
     top: 0;
     left: 50%;
+
     width: 2px;
     height: 100%;
+
     background: rgba(255, 255, 255, 0.9);
-    z-index: 3;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
 }
 
-.work-card:hover::before {
+
+/* Hide the center line when an image is expanded */
+
+.work-card.show-before::before,
+.work-card.show-after::before {
     opacity: 0;
 }
 
-/* Responsive */
+
+/* Tablet responsive styles */
+
 @media (max-width: 992px) {
+
     .work-gallery {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -674,7 +669,11 @@ body {
     }
 }
 
+
+/* Mobile responsive styles */
+
 @media (max-width: 600px) {
+
     .work-gallery {
         grid-template-columns: 1fr;
     }
